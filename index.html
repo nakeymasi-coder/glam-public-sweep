@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glam Public Sweep — Nov 5, 2026</title>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="Public Sweep">
+<meta name="theme-color" content="#168FEA">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, 'Segoe UI', Roboto, sans-serif; background: #eef4ff; color: #12233f; }
+  header { background: linear-gradient(135deg, #7db4f0, #168FEA 55%, #103B63); color: #fff; padding: 26px 18px 20px; text-align: center; }
+  header h1 { font-size: 25px; letter-spacing: .4px; text-shadow: 0 1px 3px rgba(10,40,90,.35); }
+  header p { margin-top: 6px; font-size: 14px; opacity: .95; }
+  .stats { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; padding: 14px 12px 4px; }
+  .stat { background: #fff; border: 1px solid #c9dcf7; border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 600; color: #20508f; box-shadow: 0 1px 3px rgba(30,80,160,.12); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; padding: 14px 12px 10px; position: sticky; top: 0; background: #eef4ff; z-index: 5; }
+  .chip { border: 1.5px solid #168FEA; background: #fff; color: #20508f; border-radius: 999px; padding: 10px 16px; font-size: 15px; font-weight: 600; cursor: pointer; min-height: 44px; }
+  .chip.on { background: linear-gradient(135deg, #5b9bd9, #103B63); color: #fff; }
+  main { max-width: 860px; margin: 0 auto; padding: 6px 14px 30px; }
+  h2 { font-size: 19px; color: #103B63; margin: 20px 2px 10px; }
+  .card { background: #fff; border: 1px solid #d5e4fa; border-radius: 16px; padding: 16px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(30,80,160,.08); }
+  .tag { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .4px; text-transform: uppercase; color: #2f6fc2; background: #e3efff; border-radius: 6px; padding: 3px 8px; margin-bottom: 8px; }
+  .card h3 { font-size: 17px; line-height: 1.35; margin-bottom: 6px; }
+  .card p { font-size: 14.5px; line-height: 1.45; color: #3c4c63; margin-bottom: 12px; }
+  .open { display: inline-block; background: linear-gradient(135deg, #5b9bd9, #103B63); color: #fff; text-decoration: none; font-weight: 700; font-size: 15px; padding: 12px 22px; border-radius: 999px; min-height: 48px; }
+  .farmgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .farm { background: #fff; border: 1px solid #d5e4fa; border-radius: 14px; padding: 12px; box-shadow: 0 2px 8px rgba(30,80,160,.08); }
+  .farm h3 { font-size: 15px; line-height: 1.3; margin-bottom: 8px; }
+  .farm .open { padding: 9px 18px; min-height: 42px; font-size: 14px; }
+  .warn { border: 1.5px dashed #d9930d; background: #fff8e8; }
+  .warn .tag { color: #9a6205; background: #ffeec2; }
+  .priv { border: 1.5px solid #b9c6d8; background: #f4f7fb; }
+  .priv .tag { color: #43536b; background: #e2e9f2; }
+  footer { text-align: center; padding: 18px 12px 30px; color: #5a6c87; font-size: 13px; }
+  .cta { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 8px 0 12px; }
+  .cta a { flex: 1 1 200px; max-width: 320px; text-align: center; background: linear-gradient(135deg, #5b9bd9, #103B63); color: #fff; text-decoration: none; font-weight: 700; font-size: 15px; padding: 13px 18px; border-radius: 999px; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<header>
+  <h1>✅ Glam Public Sweep 🦋</h1>
+  <p>Thursday, November 5, 2026 — every artifact, app, curriculum, farm, and podcast page checked: its own repo, and public</p>
+</header>
+
+<div class="stats">
+  <span class="stat">📦 310 repos checked</span>
+  <span class="stat">🌍 300 public</span>
+  <span class="stat">🔒 10 kept private on purpose</span>
+  <span class="stat">🚜 16/16 farms live</span>
+  <span class="stat">🔧 9 pages fixed today</span>
+  <span class="stat">🎙️ 7 artifacts shared today</span>
+</div>
+
+<div class="chips" id="chips">
+  <button class="chip on" data-f="all">All</button>
+  <button class="chip" data-f="fixed">Fixed Today</button>
+  <button class="chip" data-f="farms">Farms</button>
+  <button class="chip" data-f="podcast">Podcast</button>
+  <button class="chip" data-f="call">Needs Your Call</button>
+  <button class="chip" data-f="private">Kept Private</button>
+</div>
+
+<main id="cards">
+
+  <div class="group" data-g="fixed">
+    <h2>🔧 Fixed Today — now public and live</h2>
+    <div class="card" data-g="fixed">
+      <span class="tag">Curriculum · Was Dead</span>
+      <h3>The Pop-Up Shop Farm — Student Curriculum</h3>
+      <p>This one was private with Pages off, so the buyer link was dead. Now public, Pages on, and verified live. (Your Muse share for this same curriculum stays off, like you set it — only the GitHub buyer page was restored.)</p>
+      <a class="open" href="https://nakeymasi-coder.github.io/the-pop-up-shop-farm-curriculum/" target="_blank" rel="noopener">Open</a>
+    </div>
+    <div class="card" data-g="fixed">
+      <span class="tag">Generator · Was Private</span>
+      <h3>Master Luxury Surreal Ad Generator (10n1)</h3>
+      <p>Your single-file ad generator — checked clean (no keys or passwords in it), made public, Pages on, verified live.</p>
+      <a class="open" href="https://nakeymasi-coder.github.io/10n1/" target="_blank" rel="noopener">Open</a>
+    </div>
+    <div class="card" data-g="fixed">
+      <span class="tag">Pages Switched On</span>
+      <h3>Unseen Beauty Prompt Generator</h3>
+      <p>Repo was public but its page was switched off. Pages on — verified live.</p>
+      <a class="open" href="https://nakeymasi-coder.github.io/unseen-beauty-generator/" target="_blank" rel="noopener">Open</a>
+    </div>
+    <div class="card" data-g="fixed">
+      <span class="tag">Pages Switched On</span>
+      <h3>DUO VS BATTLE Studio</h3>
+      <p>Pages on — verified live.</p>
+      <a class="open" href="https://nakeymasi-coder.github.io/Duo-VS-Battle/" target="_blank" rel="noopener">Open</a>
+    </div>
+    <div class="card" data-g="fixed">
+      <span class="tag">Pages Switched On</span>
+      <h3>Halloween Prompt Studio</h3>
+      <p>Pages on — verified live.</p>
+      <a class="open" href="https://nakeymasi-coder.github.io/Gemini-Live-Halloween-Generator/" target="_blank" rel="noopener">Open</a>
+    </div>
+    <div class="card" data-g="fixed">
+      <span class="tag">Pages Switched On</span>
+      <h3>App Template — The Vault</h3>
+      <p>Pages on — verified live.</p>
+      <a class="open" href="https://nakeymasi-coder.github.io/App-Template/" target="_blank" rel="noopener">Open</a>
+    </div>
+    <div class="card" data-g="fixed">
+      <span class="tag">Pages Switched On</span>
+      <h3>Luxury Western AI Prompt Generator</h3>
+      <p>Pages on — verified live.</p>
+      <a class="open" href="https://nakeymasi-coder.github.io/Luxury-Western-AI-Prompt-Generator/" target="_blank" rel="noopener">Open</a>
+    </div>
+    <div class="card" data-g="fixed">
+      <span class="tag">Pages Switched On</span>
+      <h3>Holiday Glam Image Generator</h3>
+      <p>Pages on — verified live.</p>
+      <a class="open" href="https://nakeymasi-coder.github.io/Holiday-Glam-Generator-09-05-26/" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+
+  <div class="group" data-g="farms">
+    <h2>🚜 Farms — all 16 in their own repo, public, live</h2>
+    <div class="farmgrid">
+      <div class="farm"><h3>Facebook Farm</h3><a class="open" href="https://nakeymasi-coder.github.io/facebook-farm/" target="_blank" rel="noopener">Open</a></div>
+      <div class="farm"><h3>Skool Farm</h3><a class="open" href="https://nakeymasi-coder.github.io/skool-farm/" target="_blank" rel="noopener">Open</a></div>
+      <div class="farm"><h3>Pinterest Farm</h3><a class="open" href="https://nakeymasi-coder.github.io/pinterest-farm/" target="_blank" rel="noopener">Open</a></div>
+      <div class="farm"><h3>Pinterest Farm Curriculum</h3><a class="open" href="https://nakeymasi-coder.github.io/pinterest-farm-curriculum/" target="_blank" rel="noopener">Open</a></div>
+      <div class="farm"><h3>Pinterest Farm Wheel</h3><a class="open" href="https://nakeymasi-coder.github.io/pinterest-farm-wheel/" target="_blank" rel="noopener">Open</a></div>
+      <div class="farm"><h3>TikTok Shop Farm</h3><a class="open" href="https://nakeymasi-coder.github.io/tiktok-shop-farm/" target="_blank" rel="noopener">Open</a></div>
+      <div class="farm"><h3>Futuristic 3D TikTok Shop Farm</h3><a class="open" href="https://nakeymasi-coder.github.io/futuristic-3d-tiktok-shop-farm/" target="_blank" rel="noopener">Open</a></div>
+      <div class="farm"><h3>Instagram Farm</h3><a class="open" href="https://nakeymasi-coder.github.io/instagram-farm/" target="_blank" rel="noopener">Open</a></div>
+      <div class="farm"><h3>YouTube Farm</h3><a class="open" href="https://nakeymasi-coder.github.io/youtube-farm/" target="_blank" rel="noopener">Open</a></div>
+      <div class="farm"><h3>UGC Farm</h3><a class="open" href="https://nakeymasi-coder.github.io/ugc-farm/" target="_blank" rel="noopener">Open</a></div>
+      <div class="farm"><h3>UGC Agent Farm</h3><a class="open" href="https://nakeymasi-coder.github.io/ugc-agent-farm/" target="_blank" rel="noopener">Open</a></div>
+      <div class="farm"><h3>Glam UGC Farm</h3><a class="open" href="https://nakeymasi-coder.github.io/glam-ugc-farm/" target="_blank" rel="noopener">Open</a></div>
+      <div class="farm"><h3>Holiday Product Farm</h3><a class="open" href="https://nakeymasi-coder.github.io/holiday-product-farm/" target="_blank" rel="noopener">Open</a></div>
+      <div class="farm"><h3>Prompt Vault Farm</h3><a class="open" href="https://nakeymasi-coder.github.io/prompt-vault-farm/" target="_blank" rel="noopener">Open</a></div>
+      <div class="farm"><h3>Topic-to-Content Farm</h3><a class="open" href="https://nakeymasi-coder.github.io/topic-to-content-farm/" target="_blank" rel="noopener">Open</a></div>
+      <div class="farm"><h3>Pop-Up Shop Farm Curriculum</h3><a class="open" href="https://nakeymasi-coder.github.io/the-pop-up-shop-farm-curriculum/" target="_blank" rel="noopener">Open</a></div>
+    </div>
+    <div class="card" data-g="farms" style="margin-top:12px">
+      <span class="tag">Not Published — On Purpose</span>
+      <h3>Three farm folders with no repo</h3>
+      <p>Agent Farm Curriculum is your store TXT products (not a live farm). Printify Farm Demo is demo and batch files. Game Studio Farm is the Spin &amp; Slay draft — it only builds when you say "spin" in its own chat. None of these need a public repo.</p>
+    </div>
+  </div>
+
+  <div class="group" data-g="podcast">
+    <h2>🎙️ Podcast</h2>
+    <div class="card" data-g="podcast">
+      <span class="tag">Own Repo · Public · Live</span>
+      <h3>The Prompt Breakdown</h3>
+      <p>Its own public repo with Pages on and built.</p>
+      <a class="open" href="https://nakeymasi-coder.github.io/the-prompt-breakdown/" target="_blank" rel="noopener">Open</a>
+    </div>
+    <div class="card" data-g="podcast">
+      <span class="tag">Own Repo · Public · Live</span>
+      <h3>Podcast Generator</h3>
+      <p>Its own public repo with Pages on and built.</p>
+      <a class="open" href="https://nakeymasi-coder.github.io/podcast-generator/" target="_blank" rel="noopener">Open</a>
+    </div>
+    <div class="card" data-g="podcast">
+      <span class="tag">How AI After 40 Works</span>
+      <h3>AI After 40 lives on Muse links, not GitHub</h3>
+      <p>The Study Hall and the episode study companions are Muse artifacts — by design they don't have GitHub repos; their public route is their muse.ai share link. The Study Hall is shared, and today the last unshared companions were shared too (below), so every checked companion now has a public link. Their cards inside the Study Hall hub are the one follow-up left — they can be added now that the links exist.</p>
+      <a class="open" href="https://muse.ai/s/ai-after-40-study-hall-xys6i2xcbe6xfxq/bito04TYJpbKD_952CCkiCs_eGLS3rIVjjOGMQAQ1wc" target="_blank" rel="noopener">Open the Study Hall</a>
+    </div>
+    <div class="card" data-g="podcast">
+      <span class="tag">Shared Today</span>
+      <h3>Episode 33 Study Companion</h3>
+      <p>Public link created today.</p>
+      <a class="open" href="https://muse.ai/s/episode-33-study-companion-xixu6xzdxguioua/deOQhSxZrB4x3mJcKcHjfg4itECifdRdVUqqMm0t1sg" target="_blank" rel="noopener">Open</a>
+    </div>
+    <div class="card" data-g="podcast">
+      <span class="tag">Shared Today</span>
+      <h3>Episode 34 Study Companion</h3>
+      <p>Public link created today.</p>
+      <a class="open" href="https://muse.ai/s/episode-34-study-companion-rxg6xzdxgvxsiyd/r6-9ZZibqEqd3zazgG-wOIJIR8W6XoXB_9b30Igrg34" target="_blank" rel="noopener">Open</a>
+    </div>
+    <div class="card" data-g="podcast">
+      <span class="tag">Shared Today</span>
+      <h3>Episode 35 Study Companion</h3>
+      <p>Public link created today.</p>
+      <a class="open" href="https://muse.ai/s/episode-35-study-companion-oxg6xzdxgxzxuaxv8/z-Pv5yx7MsBXIG7gaWcKixmxZA4Mx3Q4GfaJf13SFhc" target="_blank" rel="noopener">Open</a>
+    </div>
+    <div class="card" data-g="podcast">
+      <span class="tag">Shared Today</span>
+      <h3>Episode 36 Study Companion</h3>
+      <p>Public link created today.</p>
+      <a class="open" href="https://muse.ai/s/episode-36-study-companion-xgxu6xzdxgvxejoxm/BjimZ5XN3GSN4AA0LvW9VTL03gM2Xr6ubzjR2mdVzNM" target="_blank" rel="noopener">Open</a>
+    </div>
+    <div class="card" data-g="podcast">
+      <span class="tag">Shared Today</span>
+      <h3>Episode 39 Study Companion</h3>
+      <p>Public link created today.</p>
+      <a class="open" href="https://muse.ai/s/episode-39-study-companion-xwk6xzdxjxotxtxac/LGdal1MtpWfXrtYCl2aLQOGUx3d0QE-4xny-m_Uagx8" target="_blank" rel="noopener">Open</a>
+    </div>
+    <div class="card" data-g="podcast">
+      <span class="tag">Shared Today</span>
+      <h3>Episode 40 Study Companion</h3>
+      <p>Public link created today.</p>
+      <a class="open" href="https://muse.ai/s/episode-40-study-companion-xuk6xzdxjxpxpxouxo/RMjoFfEbINGhETtuWA44NPlRl_znd2D7-ivQL_M5FUo" target="_blank" rel="noopener">Open</a>
+    </div>
+    <div class="card" data-g="podcast">
+      <span class="tag">Shared Today</span>
+      <h3>Animated Podcast Prompt Generator — Live Curriculum</h3>
+      <p>Public link created today.</p>
+      <a class="open" href="https://muse.ai/s/animated-podcast-prompt-generator-live-gxd6xzdxjxulxzxzw/E6lEVKtY9eLi-rQblHhB7BOvlB8IL5etlBXQqqqZ1_0" target="_blank" rel="noopener">Open</a>
+    </div>
+  </div>
+
+  <div class="group" data-g="call">
+    <h2>⚠️ Needs Your Call — nothing changed on these</h2>
+    <div class="card warn" data-g="call">
+      <span class="tag">Serves, But Won't Run Right</span>
+      <h3>Element Pro (Kendra Element Pro)</h3>
+      <p>Pages is on and the page loads, but its built files point at web-root paths, so its scripts likely won't load from this address. It needs a rebuild fix, not just Pages — your call whether it's worth it.</p>
+      <a class="open" href="https://nakeymasi-coder.github.io/Element-Pro/" target="_blank" rel="noopener">Open</a>
+    </div>
+    <div class="card warn" data-g="call">
+      <span class="tag">Empty Shells</span>
+      <h3>8 repos with nothing in them</h3>
+      <p>-Hosting-comparison, blissly-wedding-, Glam-New-Lesson, berry-pine-comet-olive, Caribbean-, Caribbean-2, FREEBIE-FRIDAY, and 90-s-Prompt-Generator are empty — there's no app in them to make public. Leave them, or delete them; your call.</p>
+    </div>
+    <div class="card warn" data-g="call">
+      <span class="tag">Not GitHub Pages Apps</span>
+      <h3>Apps that live somewhere else</h3>
+      <p>Glam Inner Circle runs on Netlify, not GitHub Pages. Glam-Camera-Action- and Google-AI-AI-TWin are build-first source apps — Pages can't run them as-is. Be Seen Generator is TXT product files, not a site. Workshop Companion, Generator Command Hub, the two Cute Prompt Generator repos, and Mini Spirit Form Generator hold only a placeholder or readme.</p>
+    </div>
+    <div class="card warn" data-g="call">
+      <span class="tag">No Repo Yet</span>
+      <h3>Local apps still without their own repo</h3>
+      <p>Apps Shelf (your organizer hub), Product Ad Director (your $49 tool — still unpublished, waiting on your publish call, left alone today), Be Seen landing page, Workshop Animated, Animated Podcast Live studio, Ask Glam, and Posted Yet. Say the word on any of them and I'll give it its own public repo.</p>
+    </div>
+    <div class="card warn" data-g="call">
+      <span class="tag">Left Unshared On Purpose</span>
+      <h3>Internal and personal artifacts</h3>
+      <p>The Glam Vault tiered pricing plan is your internal pricing strategy, so I did not make it public. A few personal ones (AI After 40 Learning Hub, Bible App, Planner Builder, Tiny Worlds) are still unshared too — if you want any of those public, just name it.</p>
+    </div>
+  </div>
+
+  <div class="group" data-g="private">
+    <h2>🔒 Kept Private — your call, exactly as you set it</h2>
+    <div class="card priv" data-g="private">
+      <span class="tag">Paid Source</span>
+      <h3>Pia Pin Studio</h3>
+      <p>The $47 app's source code stays private — the app itself is public at piapinstudio.com, where customers use it.</p>
+    </div>
+    <div class="card priv" data-g="private">
+      <span class="tag">Staging &amp; Test</span>
+      <h3>glam-hustle-hub-staging · glam-coupon-test-lab</h3>
+      <p>Store staging and coupon test shops — both carry .env files. Private.</p>
+    </div>
+    <div class="card priv" data-g="private">
+      <span class="tag">Internal Tools &amp; Source</span>
+      <h3>glam-hustle-hq · sapphire-assist-suite · glam-studio · glam-motion-studio · Brand-Motion · Content-Strategist · bizarre-sticker-shop</h3>
+      <p>Internal tools and app source code, several carrying .env files or build source. Private.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="cta">
+    <a href="https://glamhustlehub.com/products/the-glam-vault" target="_blank" rel="noopener">✨ Join The Glam Vault</a>
+    <a href="https://glamhustlehub.com" target="_blank" rel="noopener">🛍️ Shop Glam Hustle Hub</a>
+  </div>
+  Checked and fixed by Indigo during Glam's public sweep · Nov 5, 2026 · Every "live" claim on this page was opened and read back 🦋
+  <br>made with ♥ by Indigo, Glam's AI assistant
+</footer>
+
+<script>
+  var chips = document.querySelectorAll('#chips .chip');
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.classList.remove('on'); });
+      chip.classList.add('on');
+      var f = chip.getAttribute('data-f');
+      document.querySelectorAll('#cards .group').forEach(function(g){
+        if (f === 'all' || g.getAttribute('data-g') === f) { g.classList.remove('hidden'); }
+        else { g.classList.add('hidden'); }
+      });
+    });
+  });
+</script>
+</body>
+</html>
